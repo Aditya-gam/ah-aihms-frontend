@@ -1,52 +1,53 @@
 # 🏥 AH-AIHMS Frontend
 
-The official frontend repository for the **AI-Driven Healthcare Management System (AIHMS)**. Built using **React.js (CRA)**, **Tailwind CSS**, **Redux Toolkit**, and **Storybook**, this application offers an intuitive, secure, and scalable interface for patients and doctors.
+The official frontend for the **AI-Driven Healthcare Management System (AH-AIHMS)**, developed using **React.js (CRA)**, **Tailwind CSS**, **Redux Toolkit**, and **Storybook**. This modular frontend provides secure, interactive, and scalable UIs for both patients and doctors.
 
 ---
 
 ## 📌 Project Modules
 
-### 🔐 **1. Authentication**
-- Patient & Doctor Registration (separate forms)
-- Email verification flow
+### 🔐 Authentication
+- Patient & Doctor Registration (separate forms, validation)
+- Email Verification Flow
 - Secure Login (Email/Password, OAuth)
 - Two-Factor Authentication (2FA)
-- Password Reset workflow
+- Password Reset Workflow
 
-### 🧑‍⚕️ **2. Patient Dashboard**
-- AI & Manual Appointment Scheduling
-- Health Monitoring (interactive charts)
-- Medical Records (blockchain-backed)
-- Profile Management (personal info, insurance)
+### 🧑‍⚕️ Patient Dashboard
+- Manual & AI-powered Appointment Scheduling
+- Health Monitoring (interactive graphs, alerts)
+- Medical Records (upload/download, blockchain-backed)
+- User Profile Management
 - AI Chat Assistant (DeepSeek API integration)
 
-### 🩺 **3. Doctor Dashboard**
-- Patient Appointment Calendar
+### 🩺 Doctor Dashboard
+- Appointment Management (calendar UI)
 - Patient Record Access (with blockchain verification)
-- Health Analytics & Trends
+- Predictive Health Analytics & Trend Monitoring
 - Secure Real-time Messaging with Patients
 
 ---
 
 ## 🚀 Tech Stack
 
-| Layer                      | Technology                                     |
-|---------------------------|------------------------------------------------|
-| Framework                 | React.js (CRA)                                 |
-| State Management          | Redux Toolkit, Redux Persist                   |
-| CSS Framework             | Tailwind CSS, PostCSS, Autoprefixer            |
-| Forms & Validation        | React Hook Form, Yup                           |
-| Routing                   | React Router v6                                |
-| Data Visualization        | Recharts                                       |
-| Authentication            | Axios, JWT, OAuth2                             |
-| Real-time Communication   | socket.io-client                               |
-| Internationalization      | react-i18next                                  |
-| Component Docs            | Storybook                                      |
-| Testing                   | Jest, React Testing Library, Cypress           |
-| Formatting & Linting      | ESLint (Airbnb), Prettier, Husky, lint-staged  |
-| Containerization          | Docker                                         |
-| CI/CD                     | GitHub Actions                                 |
-| Deployment                | Vercel                                         |
+| Layer                    | Technology                                     |
+|-------------------------|------------------------------------------------|
+| Framework               | React.js (CRA)                                 |
+| State Management        | Redux Toolkit, Redux Persist                   |
+| CSS Framework           | Tailwind CSS, PostCSS, Autoprefixer            |
+| Routing                 | React Router v6                                |
+| Forms & Validation      | React Hook Form, Yup                           |
+| Data Visualization      | Recharts                                       |
+| API Communication       | Axios                                          |
+| Authentication          | JWT, OAuth2                                    |
+| Realtime Features       | socket.io-client                               |
+| Internationalization    | react-i18next                                  |
+| Testing                 | Jest, React Testing Library, Cypress           |
+| Documentation           | Storybook                                      |
+| Linting & Formatting    | ESLint (Airbnb), Prettier, Husky, lint-staged  |
+| Containerization        | Docker                                         |
+| CI/CD                   | GitHub Actions                                 |
+| Deployment              | Vercel                                         |
 
 ---
 
@@ -59,14 +60,12 @@ ah-aihms-frontend/
 │   ├── app/                # Redux store
 │   ├── assets/             # Images, icons, etc.
 │   ├── components/         # Shared UI components
-│   ├── features/           # Redux slices & logic
-│   ├── pages/              # Route-based pages
-│   ├── services/           # API calls (Axios)
-│   ├── utils/              # Reusable utilities
-│   ├── index.js            # App entry point
-│   └── App.js              # Root component
-├── .github/workflows/      # CI/CD workflows
-├── .husky/                 # Git hooks
+│   ├── features/           # Redux slices & business logic
+│   ├── pages/              # Route-based views
+│   ├── services/           # API integrations
+│   ├── utils/              # Utility helpers
+│   ├── App.js              # Root component
+│   └── index.js            # Entry point
 ├── .env.development
 ├── .env.production
 ├── .eslintrc.json
@@ -96,40 +95,40 @@ cd ah-aihms-frontend
 npm install
 ```
 
-### 3. Run the Development Server
+### 3. Start Development Server
 
 ```bash
 npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
+App runs at: [http://localhost:3000](http://localhost:3000)
 
 ---
 
 ## 🧪 Scripts & Commands
 
-| Script               | Description                                         |
-|----------------------|-----------------------------------------------------|
-| `npm start`          | Start development server                           |
-| `npm run build`      | Build production-ready app                         |
-| `npm test`           | Run tests with Jest                                |
-| `npm run lint`       | Run ESLint (Airbnb config)                         |
-| `npm run format`     | Format code using Prettier                         |
-| `npm run storybook`  | Launch Storybook UI docs                           |
-| `npm run build-storybook` | Build static Storybook files                   |
-| `npm run eject`      | Eject CRA configuration (not recommended)          |
+| Script                      | Description                                  |
+|-----------------------------|----------------------------------------------|
+| `npm start`                 | Start local dev server (CRA)                 |
+| `npm run build`             | Build app for production                     |
+| `npm test`                  | Run unit and integration tests               |
+| `npm run lint`              | Run ESLint checks                            |
+| `npm run format`            | Format codebase using Prettier               |
+| `npm run storybook`         | Launch Storybook UI documentation            |
+| `npm run build-storybook`   | Build static Storybook output                |
+| `npm run eject`             | Eject CRA config (use only if necessary)     |
 
 ---
 
 ## 🌐 Environment Variables
 
-Create `.env.development` and `.env.production` in root:
+Create `.env.development` and `.env.production`:
 
 ```env
 REACT_APP_API_BASE_URL=http://localhost:5000
 ```
 
-Use it inside your code like:
+Usage in code:
 
 ```js
 const apiUrl = process.env.REACT_APP_API_BASE_URL;
@@ -153,11 +152,11 @@ docker run -p 3000:3000 ah-aihms-frontend
 
 ---
 
-## 🔄 CI/CD - GitHub Actions + Vercel
+## 🔄 CI/CD Pipeline
 
-Automatic build & deployment upon `main` branch push.
+CI/CD is configured via **GitHub Actions** and deploys to **Vercel**.
 
-Add these secrets to your GitHub repository:
+Add the following secrets to your GitHub repository settings:
 
 - `VERCEL_TOKEN`
 - `VERCEL_ORG_ID`
@@ -167,17 +166,17 @@ Add these secrets to your GitHub repository:
 
 ## 📚 Storybook
 
-Launch interactive component documentation:
+Launch the interactive UI component documentation:
 
 ```bash
 npm run storybook
 ```
 
-Access at [http://localhost:6006](http://localhost:6006)
+Accessible at: [http://localhost:6006](http://localhost:6006)
 
 ---
 
-## 🧪 Testing
+## ✅ Testing
 
 | Type           | Tools Used                   |
 |----------------|------------------------------|
@@ -191,7 +190,7 @@ Run tests:
 npm test
 ```
 
-Run E2E with Cypress:
+Run E2E:
 
 ```bash
 npx cypress open
@@ -199,23 +198,23 @@ npx cypress open
 
 ---
 
-## ✍️ Contribution Guidelines
+## 🧾 Contribution Guidelines
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/my-feature`)
-3. Commit changes (`git commit -m 'feat: add new feature'`)
-4. Push to the branch (`git push origin feature/my-feature`)
+1. Fork this repo
+2. Create a feature branch: `git checkout -b feature/feature-name`
+3. Commit changes: `git commit -m "feat: add <feature>"`
+4. Push changes: `git push origin feature/feature-name`
 5. Open a Pull Request
 
 ---
 
-## 📄 **License**
+## 📄 License
 
 Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
 
 ---
 
-## 📧 **Contact**
+## 📧 Contact
 
 **Aditya Gambhir**  
 📬 [agamb031@ucr.edu](mailto:agamb031@ucr.edu)
@@ -228,11 +227,12 @@ Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
 
 ---
 
-## ⚡ **Acknowledgements**
+## ⚡ Acknowledgements
 
-- [React Documentation](https://reactjs.org/)
+- [React.js](https://reactjs.org/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Storybook](https://storybook.js.org/)
 - [Docker](https://docs.docker.com/)
 - [Vercel](https://vercel.com/)
+- [GitHub Actions](https://github.com/features/actions)
