@@ -42,8 +42,8 @@ coverage/
 *.sublime-workspace
 
 # Docker artifacts
-.dockerignore
-Dockerfile
+# .dockerignore
+# Dockerfile
 
 # Husky and Git Hooks
 .husky/_/
