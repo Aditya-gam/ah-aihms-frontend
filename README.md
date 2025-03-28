@@ -2,6 +2,10 @@
 
 The official frontend for the **AI-Driven Healthcare Management System (AH-AIHMS)**, developed using **React.js (CRA)**, **Tailwind CSS**, **Redux Toolkit**, and **Storybook**. This modular frontend provides secure, interactive, and scalable UIs for both patients and doctors.
 
+![CI/CD](https://github.com/Aditya-gam/ah-aihms-frontend/actions/workflows/deploy.yml/badge.svg)
+[![Vercel](https://vercelbadge.vercel.app/api/adityagams-projects/ah-aihms-frontend)](https://ah-aihms-frontend.vercel.app/)
+
+
 ---
 
 ## 📌 Project Modules
