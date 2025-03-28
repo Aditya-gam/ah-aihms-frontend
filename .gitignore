@@ -1,0 +1,75 @@
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Production
+build/
+dist/
+.cache/
+.temp/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+
+# dotenv files
+.env
+.env.development
+.env.production
+.env.local
+.env.*.local
+
+# Log files
+*.log
+
+# Storybook build
+storybook-static/
+
+# Coverage and testing
+coverage/
+*.lcov
+
+# OS-specific files
+*.sublime-project
+*.sublime-workspace
+
+# Docker artifacts
+# .dockerignore
+# Dockerfile
+
+# Husky and Git Hooks
+.husky/_/
+.husky/*
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+*storybook.log
