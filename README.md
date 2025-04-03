@@ -1,126 +1,107 @@
 # 🏥 AH-AIHMS Frontend
 
-The official frontend for the **AI-Driven Healthcare Management System (AH-AIHMS)**, developed using **React.js (CRA)**, **Tailwind CSS**, **Redux Toolkit**, and **Storybook**. This modular frontend provides secure, interactive, and scalable UIs for both patients and doctors.
+The official frontend for the **AI-Driven Healthcare Management System (AH-AIHMS)**, developed with **React.js**, **Redux Toolkit**, **Tailwind CSS**, and documented with **Storybook**. This application provides secure, responsive, and interactive user interfaces for patients and healthcare providers, incorporating advanced AI and blockchain features seamlessly.
 
-![CI/CD](https://github.com/Aditya-gam/ah-aihms-frontend/actions/workflows/deploy.yml/badge.svg)
+[![CI/CD](https://github.com/Aditya-gam/ah-aihms-frontend/actions/workflows/deploy.yml/badge.svg)](https://github.com/Aditya-gam/ah-aihms-frontend/actions/workflows/deploy.yml)
 [![Vercel](https://vercelbadge.vercel.app/api/adityagams-projects/ah-aihms-frontend)](https://ah-aihms-frontend.vercel.app/)
-
 
 ---
 
 ## 📌 Project Modules
 
 ### 🔐 Authentication
-- Patient & Doctor Registration (separate forms, validation)
-- Email Verification Flow
-- Secure Login (Email/Password, OAuth)
+- Separate registration flows for patients and doctors
+- Email verification and password recovery workflows
+- Secure login with JWT & OAuth2 integration
 - Two-Factor Authentication (2FA)
-- Password Reset Workflow
 
 ### 🧑‍⚕️ Patient Dashboard
-- Manual & AI-powered Appointment Scheduling
-- Health Monitoring (interactive graphs, alerts)
-- Medical Records (upload/download, blockchain-backed)
-- User Profile Management
-- AI Chat Assistant (DeepSeek API integration)
+- AI-driven appointment scheduling
+- Real-time health monitoring with interactive visualizations
+- Secure medical record management (blockchain-integrated)
+- AI Chat Assistant leveraging DeepSeek API
 
 ### 🩺 Doctor Dashboard
-- Appointment Management (calendar UI)
-- Patient Record Access (with blockchain verification)
-- Predictive Health Analytics & Trend Monitoring
-- Secure Real-time Messaging with Patients
+- Calendar-based appointment management
+- Blockchain-verified patient records access
+- Predictive health analytics and trend visualization
+- Secure real-time messaging system with patients
 
 ---
 
 ## 🚀 Tech Stack
 
-| Layer                    | Technology                                     |
-|-------------------------|------------------------------------------------|
-| Framework               | React.js (CRA)                                 |
-| State Management        | Redux Toolkit, Redux Persist                   |
-| CSS Framework           | Tailwind CSS, PostCSS, Autoprefixer            |
-| Routing                 | React Router v6                                |
-| Forms & Validation      | React Hook Form, Yup                           |
-| Data Visualization      | Recharts                                       |
-| API Communication       | Axios                                          |
-| Authentication          | JWT, OAuth2                                    |
-| Realtime Features       | socket.io-client                               |
-| Internationalization    | react-i18next                                  |
-| Testing                 | Jest, React Testing Library, Cypress           |
-| Documentation           | Storybook                                      |
-| Linting & Formatting    | ESLint (Airbnb), Prettier, Husky, lint-staged  |
-| Containerization        | Docker                                         |
-| CI/CD                   | GitHub Actions                                 |
-| Deployment              | Vercel                                         |
+| Layer                  | Technology                                             |
+|------------------------|--------------------------------------------------------|
+| **Framework**          | React.js (Create React App)                            |
+| **State Management**   | Redux Toolkit, Redux Persist                           |
+| **Styling & UI**       | Tailwind CSS, PostCSS, Autoprefixer                    |
+| **Routing**            | React Router v6                                        |
+| **Forms & Validation** | React Hook Form, Yup                                   |
+| **Data Visualization** | Recharts                                               |
+| **API Communication**  | Axios                                                  |
+| **Authentication**     | JWT, OAuth2                                            |
+| **Real-time Features** | Socket.io-client                                       |
+| **Internationalization**| react-i18next                                         |
+| **Testing**            | Jest, React Testing Library, Cypress                   |
+| **Component Docs**     | Storybook                                              |
+| **Linting & Formatting**| ESLint (Airbnb), Prettier, Husky, lint-staged         |
+| **Containerization**   | Docker                                                 |
+| **CI/CD Pipeline**     | GitHub Actions                                         |
+| **Deployment**         | Vercel                                                 |
+| **Monitoring**         | Sentry                                                 |
 
 ---
 
-## 📁 Directory Structure
+## 📁 Project Structure
 
-```
+```bash
 ah-aihms-frontend/
 ├── public/
 ├── src/
-│   ├── app/                # Redux store
-│   ├── assets/             # Images, icons, etc.
-│   ├── components/         # Shared UI components
-│   ├── features/           # Redux slices & business logic
-│   ├── pages/              # Route-based views
-│   ├── services/           # API integrations
-│   ├── utils/              # Utility helpers
+│   ├── app/                # Redux store and persistence config
+│   ├── assets/             # Static assets (images, icons)
+│   ├── components/         # Reusable UI components
+│   ├── features/           # Feature-specific Redux slices and logic
+│   ├── pages/              # View components mapped to routes
+│   ├── services/           # API integrations & Axios instances
+│   ├── utils/              # Helper functions and utilities
 │   ├── App.js              # Root component
-│   └── index.js            # Entry point
+│   └── index.js            # Application entry point
 ├── .env.development
 ├── .env.production
-├── .eslintrc.json
+├── .eslint.config.mjs
 ├── .prettierrc
-├── .gitignore
 ├── Dockerfile
+├── package.json
 ├── tailwind.config.js
 ├── postcss.config.js
-├── package.json
+├── .gitignore
 └── README.md
 ```
 
 ---
 
-## 🛠 Setup Instructions
+## ⚙️ Setup Instructions
 
-### 1. Clone the Repository
+### 🛑 Prerequisites
+- [Node.js](https://nodejs.org/) (v20 or higher recommended)
+- [npm](https://npmjs.com/)
+
+### 🚧 Installation & Setup
+Clone and set up the repository locally:
 
 ```bash
 git clone https://github.com/Aditya-gam/ah-aihms-frontend.git
 cd ah-aihms-frontend
-```
-
-### 2. Install Dependencies
-
-```bash
 npm install
 ```
 
-### 3. Start Development Server
-
+### ▶️ Run Development Server
 ```bash
 npm start
 ```
-
 App runs at: [http://localhost:3000](http://localhost:3000)
-
----
-
-## 🧪 Scripts & Commands
-
-| Script                      | Description                                  |
-|-----------------------------|----------------------------------------------|
-| `npm start`                 | Start local dev server (CRA)                 |
-| `npm run build`             | Build app for production                     |
-| `npm test`                  | Run unit and integration tests               |
-| `npm run lint`              | Run ESLint checks                            |
-| `npm run format`            | Format codebase using Prettier               |
-| `npm run storybook`         | Launch Storybook UI documentation            |
-| `npm run build-storybook`   | Build static Storybook output                |
-| `npm run eject`             | Eject CRA config (use only if necessary)     |
 
 ---
 
@@ -128,27 +109,41 @@ App runs at: [http://localhost:3000](http://localhost:3000)
 
 Create `.env.development` and `.env.production`:
 
+**Development**
 ```env
-REACT_APP_API_BASE_URL=http://localhost:5000
+REACT_APP_API_BASE_URL=http://localhost:5001/api
 ```
 
-Usage in code:
-
-```js
-const apiUrl = process.env.REACT_APP_API_BASE_URL;
+**Production**
+```env
+REACT_APP_API_BASE_URL=https://ah-aihms-backend.onrender.com/api
 ```
 
 ---
 
-## 🐳 Docker Usage
+## 🧪 Available Scripts & Commands
 
-### Build Docker Image
+| Command                      | Description                                  |
+|------------------------------|----------------------------------------------|
+| `npm start`                  | Run local development server                  |
+| `npm run build`              | Build optimized production bundle             |
+| `npm test`                   | Execute Jest tests                            |
+| `npm run lint`               | Check code quality with ESLint                |
+| `npm run format`             | Format codebase with Prettier                 |
+| `npm run storybook`          | Start Storybook for component documentation   |
+| `npm run build-storybook`    | Build static Storybook files                  |
+
+---
+
+## 🐳 Docker Setup (Optional)
+
+Build the Docker image:
 
 ```bash
 docker build -t ah-aihms-frontend .
 ```
 
-### Run Container
+Run Docker container:
 
 ```bash
 docker run -p 3000:3000 ah-aihms-frontend
@@ -156,87 +151,117 @@ docker run -p 3000:3000 ah-aihms-frontend
 
 ---
 
-## 🔄 CI/CD Pipeline
+## 📚 Storybook UI Documentation
 
-CI/CD is configured via **GitHub Actions** and deploys to **Vercel**.
-
-Add the following secrets to your GitHub repository settings:
-
-- `VERCEL_TOKEN`
-- `VERCEL_ORG_ID`
-- `VERCEL_PROJECT_ID`
-
----
-
-## 📚 Storybook
-
-Launch the interactive UI component documentation:
+Launch interactive UI component docs:
 
 ```bash
 npm run storybook
 ```
 
-Accessible at: [http://localhost:6006](http://localhost:6006)
+Access Storybook at: [http://localhost:6006](http://localhost:6006)
 
 ---
 
-## ✅ Testing
+## ✅ Testing & QA
 
-| Type           | Tools Used                   |
-|----------------|------------------------------|
-| Unit Tests     | Jest + React Testing Library |
-| Integration    | Jest                         |
-| End-to-End     | Cypress                      |
+- **Unit & Integration tests:** Jest + React Testing Library
+- **E2E tests:** Cypress
 
-Run tests:
-
+Run Jest tests:
 ```bash
 npm test
 ```
 
-Run E2E:
-
+Run Cypress E2E:
 ```bash
 npx cypress open
 ```
 
 ---
 
+## 🔁 CI/CD Pipeline
+
+CI/CD pipeline via GitHub Actions auto-deploys to Vercel on `master` pushes:
+
+- Ensure the following secrets are configured in your GitHub repository settings:
+  - `VERCEL_TOKEN`
+  - `VERCEL_ORG_ID`
+  - `VERCEL_PROJECT_ID`
+
+📄 [View deploy.yml workflow](https://github.com/Aditya-gam/ah-aihms-frontend/blob/master/.github/workflows/deploy.yml)
+
+---
+
+## 📈 Logging & Monitoring (Sentry)
+
+Integrated with Sentry for real-time monitoring:
+
+- Create a React project at [Sentry.io](https://sentry.io/).
+- Replace DSN in `src/index.js`:
+```js
+Sentry.init({
+  dsn: 'your_sentry_dsn_here',
+  integrations: [new BrowserTracing()],
+  tracesSampleRate: 1.0,
+});
+```
+
+---
+
 ## 🧾 Contribution Guidelines
 
-1. Fork this repo
-2. Create a feature branch: `git checkout -b feature/feature-name`
-3. Commit changes: `git commit -m "feat: add <feature>"`
-4. Push changes: `git push origin feature/feature-name`
-5. Open a Pull Request
+1. Fork the repository
+2. Create a new feature branch:
+    ```bash
+    git checkout -b feature/feature-name
+    ```
+3. Commit your changes clearly:
+    ```bash
+    git commit -m "feat: Add <your-feature>"
+    ```
+4. Push changes:
+    ```bash
+    git push origin feature/feature-name
+    ```
+5. Open a pull request to `master`.
 
 ---
 
 ## 📄 License
 
-Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
+Distributed under the **MIT License**. [View full LICENSE file](LICENSE).
 
 ---
 
-## 📧 Contact
+## 📧 Contact & Support
 
-**Aditya Gambhir**  
-📬 [agamb031@ucr.edu](mailto:agamb031@ucr.edu)
+- **Aditya Gambhir** – [agamb031@ucr.edu](mailto:agamb031@ucr.edu)
+- **Ajit Singh** – [asing349@ucr.edu](mailto:asing349@ucr.edu)
 
-**Ajit Singh**  
-📬 [asing349@ucr.edu](mailto:asing349@ucr.edu)
-
-**Project Repository**  
-🔗 [https://github.com/Aditya-gam/ah-aihms-frontend.git](https://github.com/Aditya-gam/ah-aihms-frontend.git)
+📦 **[Project Repository](https://github.com/Aditya-gam/ah-aihms-frontend)**  
+🚀 **[Live Demo on Vercel](https://ah-aihms-frontend.vercel.app/)**
 
 ---
 
-## ⚡ Acknowledgements
+## ⚡ Acknowledgements & References
 
-- [React.js](https://reactjs.org/)
+- [React.js](https://react.dev/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Storybook](https://storybook.js.org/)
 - [Docker](https://docs.docker.com/)
-- [Vercel](https://vercel.com/)
-- [GitHub Actions](https://github.com/features/actions)
+- [Vercel](https://vercel.com/docs)
+- [GitHub Actions](https://docs.github.com/actions)
+- [Sentry](https://docs.sentry.io/)
+- [Axios](https://axios-http.com/)
+- [Jest](https://jestjs.io/)
+- [Cypress](https://www.cypress.io/)
+
+---
+
+### 🎯 Future Enhancements
+
+- Expanded real-time features and AI integration
+- Additional analytics and performance metrics
+- Advanced blockchain features for medical data integrity
